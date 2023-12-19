@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #horizontal-line {
+      position: absolute;
+      background-color: red;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 5px;
+    }
+
+    #vertical-line {
+      position: absolute;
+      background-color: red;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="horizontal-line"></div>
+  <div id="vertical-line"></div>
+  <script>
+    let horizontalLine, verticalLine;
+
+    function initCrosshair() {
+      horizontalLine = document.getElementById('horizontal-line');
+      verticalLine = document.getElementById('vertical-line');
+    }
+
+    function updateCrosshair({x, y}) {
+      const lineWidth = 5;
+
+      // Update horizontal line position and size
+      horizontalLine.style.top = `${y - lineWidth / 2}px`;
+
+      // Update vertical line position and size
+      verticalLine.style.left = `${x - lineWidth / 2}px`;
+    }
+
+    window.addEventListener('load', () => {
+      initCrosshair();
+      let lastCall = Date.now();
+      electron.ipcRenderer.on('mouse-update', updateCrosshair);
+    });
+
+  </script>
+
+</body>
+
+</html>

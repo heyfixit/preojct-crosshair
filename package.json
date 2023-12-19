@@ -1,0 +1,22 @@
+{
+  "name": "project-crosshair",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "build": {
+    "appId": "com.github.heyfixit.project-crosshair",
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,4 @@
+__pycache__
+node_modules
+release-builds/project-crosshair-linux-x64
+dist

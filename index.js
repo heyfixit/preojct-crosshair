@@ -25,7 +25,13 @@ function createWindow() {
     },
   });
   win.setIgnoreMouseEvents(true, { forward: true });
-  win.setPosition(allDisplays[0].bounds.x, allDisplays[0].bounds.y);
+  win.setPosition(0, 0);
+
+  // Mechanism one can use to have the window span all displays
+  // https://stackoverflow.com/a/64812632/11391210
+  win.setMinimumSize(combinedBounds.width, combinedBounds.height);
+
+  // Enable in case of debugging
   // win.webContents.openDevTools({ mode: 'detach' });
 
   win.loadFile('index.html');

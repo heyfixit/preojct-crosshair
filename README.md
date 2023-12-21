@@ -1,9 +1,11 @@
-# 🌟 project-crosshair 🌟
+# project-crosshair
 
 ## Introduction
 This project is a simple Electron-based solution for drawing a crosshair on screen that tracks your mouse.
 
 ## Features
+- Crosshair spans all displays
+- Several modes:
 - "On": crosshair is visible and centered on mouse cursor
 - "Detached": crosshair is visible but stationary at the location where this mode was entered
 - "Off": crosshair is not visible
@@ -14,20 +16,26 @@ This project is a simple Electron-based solution for drawing a crosshair on scre
 To get this app running on your machine, follow these simple steps:
 
 1. **Clone the Repository**
-   \`\`\`bash
+   ```bash
    git clone https://github.com/heyfixit/project-crosshair
-   \`\`\`
+   ```
 
 2. **Install Dependencies**
    Navigate to the project directory and run:
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. **Start the App**
-   \`\`\`bash
+   ```bash
    npm start
-   \`\`\`
+   ```
+   
+## Building Standalone Executable
+```bash
+npx electron-builder --linux
+```
+- There are Mac and Windows build targets as well (untested).
 
 ## Prerequisites
 - Node.js
